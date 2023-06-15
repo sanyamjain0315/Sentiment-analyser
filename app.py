@@ -32,7 +32,7 @@ if click:
 load_dotenv()
 st.header("Speech classification")
 API_URL = "https://api-inference.huggingface.co/models/j-hartmann/emotion-english-distilroberta-base"
-headers = {"Authorization": "Bearer "+os.getenv('HUGGINGFACE_API')}
+headers = {"Authorization": "Bearer "+st.secrets['HUGGINGFACE_API']}
 
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
