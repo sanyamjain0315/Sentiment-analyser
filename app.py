@@ -9,7 +9,7 @@ def vader_senti(text):
     senti = SentimentIntensityAnalyzer()
     senti_results = senti.polarity_scores(text)
     positive_results = senti_results['pos']
-    negative_results = senti_results['neg']
+    negative_results = senti_results['neu']
     
     if senti_results['compound'] >= 0.05:
         st.write("Sentence is Positive")
